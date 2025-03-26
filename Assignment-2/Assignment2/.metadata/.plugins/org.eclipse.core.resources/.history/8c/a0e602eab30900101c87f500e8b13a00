@@ -1,0 +1,15 @@
+package com.sunbeam;
+import com.sunbeam.*;
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee obj = new Employee();
+		Employee obj1 = new Employee();
+		
+		obj.acceptRecord();
+		obj.PrintRecord();
+
+	}
+
+}
