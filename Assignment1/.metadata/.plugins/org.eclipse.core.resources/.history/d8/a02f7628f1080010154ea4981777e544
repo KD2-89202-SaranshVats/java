@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Program {
+	public int menu(){
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		System.out.println("1 Dosa");
+		System.out.println("2 Samosa");
+		System.out.println("3 Idli");
+		System.out.println("4 Vada");
+		System.out.println("5 Manchoorian");
+		System.out.println("6 Chowmein");
+		System.out.println("7 Soup");
+		System.out.println("8. Rabdi");
+		System.out.println("9. Jalebi");
+		System.out.println("10. Gulab Jamun");
+		System.out.println("Enter choice:- ");
+		choice =  sc.nextInt();
+		return choice;
+	}
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	
+//	int choice1 = 0;
+	do {
+		switch(choice1) {
+		case 1:
+			double total_samosa = 0;
+			int p = 15;
+			System.out.println("price : Samosa = "+p);
+			int c;
+			System.out.println("How many Samosa you want:- ");
+			c = sc.nextInt();
+			total_samosa = total_samosa + (c * p); 
+		}
+	}while;
+	}	
+}

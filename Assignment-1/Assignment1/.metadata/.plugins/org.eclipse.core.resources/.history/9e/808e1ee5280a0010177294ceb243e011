@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class Program{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String op;
+		double amount = 0;
+		do {
+			System.out.println("0. EXIT!!!");
+			System.out.println("1. DOSA");
+			System.out.println("2. SAMOSA");
+			System.out.println("3. IDLI");
+			System.out.println("4. VADA");
+			System.out.println("5. MANCHOORIAN");
+			System.out.println("6. FRIED RICE");
+			System.out.println("7. SOUP");
+			System.out.println("8. RASGULLA");
+			System.out.println("9. RASMALAI");
+			System.out.println("10. GENERATE BILL");
+			op = sc.next();
+			
+			switch(op) {
+			case "1":
+				double price = 30;
+				int quantity;
+				System.out.println("DOSA Price:- "+price);
+				System.out.println("Enter Quantity:- ");
+				quantity = sc.nextInt();
+				double bill = quantity * price;
+				amount = amount + bill;
+				break;
+			case "2":
+				double price1 = 15;
+				int quantity1;
+				System.out.println("Samosa Price:- "+price);
+				System.out.println("Enter Quantity:- ");
+				quantity1 = sc.nextInt();
+				double bill1 = quantity1 * price1;
+				amount = amount +bill1;
+				break;
+			
+			case "3":
+				double price2 = 25;
+				int quantity2;
+				System.out.println("IDLI Price:- "+price);
+				System.out.println("Enter Quantity:- ");
+				quantity2 = sc.nextInt();
+				double bill2 = quantity2 * price2;
+				amount = amount + bill2;
+				break;
+			case "4":
+				double price3 = 25;
+				int quantity3;
+				System.out.println("Vada Price:- "+price);
+				System.out.println("Enter Quantity:- ");
+				quantity3 = sc.nextInt();
+				double bill3 = quantity3 * price3;
+				amount = amount + bill3;
+				break;
+			case "10":
+				System.out.println("Bill_Generate:- "+amount);
+				break;
+			default :
+				System.out.println("Wrong Choice!!! Please Enter the correct choice!!!");
+				break;
+			}
+		}while(!op.equals("0"));
+	}
+}
