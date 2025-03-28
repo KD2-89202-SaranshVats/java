@@ -1,0 +1,29 @@
+package tester;
+import java.util.Scanner;
+import com.app.geometry.*;
+public class TestPoint {
+	
+	public void acceptRecord(Point2D obj , Point2D obj2) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter x co-ord for Point1:- ");
+		obj.setX(sc.nextDouble());
+		
+		System.out.println("Enter y co-ord for Point1:- ");
+		obj.setY(sc.nextDouble());
+		
+		System.out.println("Enter x co-ord for Point2:- ");
+		obj2.setX(sc.nextDouble());
+		
+		System.out.println("Enter y co-ord for Point2:- ");
+		obj2.setY(sc.nextDouble());
+	}	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Point2D p1 = new Point2D();
+		Point2D p2 = new Point2D();
+		
+
+	}
+
+}
