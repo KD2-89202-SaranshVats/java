@@ -1,0 +1,14 @@
+package com.app.fruits;
+import java.util.Scanner;
+public class FruitBasket {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int counter = 0;
+		int size;
+		Fruit[] arr = new Fruit[size];
+
+	}
+
+}

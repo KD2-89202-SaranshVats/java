@@ -1,0 +1,33 @@
+package com.app.fruits;
+import java.util.Scanner;
+public class FruitBasket {
+	
+	public int menulist() {
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		System.out.println("0. EXIT!!!");	
+		System.out.println("1. Add Mango");
+		System.out.println("2. Add Orange");
+		System.out.println("3. Add Apple");
+		System.out.println("4. Display Names of all fruits:- ");
+		System.out.println("5. Display Name , color , weight , Taste of all fresh Fruits in basket:- ");
+		System.out.println("6. Display Taste of all stale(not fresh) fruits ");
+		System.out.println("7. Make a Fruit as Stale(Not Fresh) ");
+		System.out.println("8. Mark all sour fruits stale:- ");
+		System.out.println("Enter Choice:- ");
+		choice = sc.nextInt();
+		return choice;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int counter = 0;
+		int size;
+		System.out.println("Enter the size of basket:- ");
+		size = sc.nextInt();
+		Fruit[] arr = new Fruit[size];
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.app.fruits;
+import java.util.Scanner;
+
+abstract class Fruit {
+	private String color;
+	private double weight;
+	private String name;
+	private boolean isFresh;
+	
+
+	public abstract String taste();
+}
