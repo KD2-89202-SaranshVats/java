@@ -1,0 +1,22 @@
+package com.sunbeam;
+import java.util.Scanner;
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str;
+		String result = "";
+		System.out.println("Enter the String:- ");
+		str = sc.nextLine();
+		str.trim();
+		
+		for(int i = 0 ; i < str.length() ; i++) {
+			result = result + str.charAt(i);
+		}
+		
+		System.out.println("Rverse String is:- "+result);
+		
+	}
+
+}

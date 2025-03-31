@@ -1,0 +1,20 @@
+package com.sunbeam;
+import java.util.Scanner;
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String str;
+		System.out.println("Enter the String:- ");
+		str = sc.next();
+//		str.trim();
+		
+		StringBuffer str1 = new StringBuffer(str);
+		str1.reverse();
+		String str2 = str1.toString();
+		System.out.println("Reverse String is:- "+str2);
+		
+	}
+
+}
