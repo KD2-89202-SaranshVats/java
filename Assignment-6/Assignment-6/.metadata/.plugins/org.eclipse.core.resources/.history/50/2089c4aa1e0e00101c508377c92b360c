@@ -1,0 +1,13 @@
+package package1;
+import java.util.Scanner;
+public class Program {
+	public static void calLength() throws ExceptionLineTooLong {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

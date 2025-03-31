@@ -1,0 +1,22 @@
+package pacakge2;
+import java.util.Scanner;
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Circle c = new Circle();
+			c.setMyX(10);
+			c.setMyY(12);
+			c.setMyDiameter(12);
+			
+			System.out.println(c.toString());
+		}
+		
+		catch(InvalidDiameterException e){
+			System.out.println(e.getMessage());
+		}
+		
+	}
+
+}
