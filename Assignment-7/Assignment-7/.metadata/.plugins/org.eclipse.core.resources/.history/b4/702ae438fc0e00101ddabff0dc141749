@@ -1,0 +1,35 @@
+package package2;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Comparator;
+
+class SortByCityDesc implements Comparator<Student>{
+	@Override
+	public int compare(Student x , Student y) {
+		int diff = y.getCity().compareTo(x.getCity());
+		return diff;
+	}
+}
+
+class SortByMarks implements Comparator<Student>{
+	public int compare(Student x , Student y) {
+		int diff = (int)(y.getMarks()-x.getMarks());
+		return diff;
+	}
+}
+
+class SortByName implements Comparator<Student>{
+	public int compare(Student x , Student y) {
+		int diff = x.getName().compareTo(y.getName());
+		return diff;
+	}
+}
+
+public class Program {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

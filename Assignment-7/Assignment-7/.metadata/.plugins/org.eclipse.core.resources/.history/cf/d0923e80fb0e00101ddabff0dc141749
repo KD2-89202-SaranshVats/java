@@ -1,0 +1,22 @@
+package package2;
+import java.util.Scanner;
+import java.util.Arrays;
+
+class SortByCityDesc implements Comparator<Student>{
+	public int compare(Student x , Student y) {
+		int diff = y.getCity().compareTo(x.getCity());
+		return diff;
+	}
+}
+
+
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
