@@ -1,0 +1,140 @@
+package package1;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
+class Book{
+	private String isbn;
+	private double price;
+	private String authorName;
+	private int quantity;
+	
+	public Book() {
+		
+	}
+	
+	public Book(String isbn , double price , String authorName , int quantity) {
+		this.isbn = isbn;
+		this.price = price;
+		this.authorName = authorName;
+		this.quantity = quantity;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getAuthorName() {
+		return authorName;
+	}
+
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s   %f   %s   %d",this.isbn,this.price,this.authorName,this.quantity);
+	}
+	
+	public boolean equals(Object obj) {
+		if(this==obj) {
+			return true;
+		}
+		if(!(obj instanceof Book)) {
+			return false;
+		}
+		Book other = (Book)obj;
+		if(this.isbn==other.isbn) {
+			return true;
+		}
+		return false;
+	}
+}
+
+
+public class Program {
+	private static List<Book> list = new ArrayList<Book>();
+	private static ListIterator<Book> trav = list.listIterator();
+	public static Book[] getInstance() {
+		Book[] arr = new Book[4];
+		arr[0] = new Book("1",100,"Yoka Mahi",5);
+		arr[1] = new Book("2",200,"Zakir",10);
+		arr[2] = new Book("3",300,"Rohan",15);
+		arr[3] = new Book("4",400,"Lokesh",20);
+		return arr;
+	}
+	
+	public static void addBook(Book[] arr) {
+		for(Book b : arr) {
+			list.add(b);
+		}
+	}
+	
+	public static void printForward(Book[] book) {
+		if(book!=null) {
+		while(trav.hasNext()) {
+			Book b = trav.next();
+			System.out.println(b);
+		}
+		}
+	}
+	
+	public static Scanner sc = new Scanner(System.in);
+	public static int menulist() {
+		int choice;
+		System.out.println("0.EXIT!!!");
+		System.out.println("1. Add a new Book");
+		System.out.println("2. Display all Books in Forward Order");
+		System.out.println("3. Display all Books in Reverse Order");
+		System.out.println("4 Delete a book at given index");
+		System.out.println("Enter choice:- ");
+		choice = sc.nextInt();
+		return choice;
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int choice;
+		while((choice = menulist())!=0) {
+			switch(choice) {
+			case 1:
+				list.clear();
+				Book[] arr = Program.getInstance();
+				Program.addBook(arr);
+				break;
+				
+			case 2:
+				Program.printForward(arr);
+				break;
+			}
+				
+		}
+
+	}
+
+}

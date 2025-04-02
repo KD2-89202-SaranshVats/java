@@ -1,0 +1,119 @@
+package package1;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Book{
+	private String isbn;
+	private double price;
+	private String authorName;
+	private int quantity;
+	
+	public Book() {
+		
+	}
+	
+	public Book(String isbn , double price , String authorName , int quantity) {
+		this.isbn = isbn;
+		this.price = price;
+		this.authorName = authorName;
+		this.quantity = quantity;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getAuthorName() {
+		return authorName;
+	}
+
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	public void acceptBook() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the isbn:- ");
+		isbn = sc.next();
+		
+		System.out.println("Enter the price:- ");
+		price = sc.nextDouble();
+		
+		System.out.println("Enter the authorName:- ");
+		authorName = sc.nextLine();
+		
+		System.out.println("Enter the Quantity:- ");
+		quantity = sc.nextInt();
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s   %f   %s   %d",this.isbn,this.price,this.authorName,this.quantity);
+	}
+	
+	public boolean equals(Object obj) {
+		if(this==obj) {
+			return true;
+		}
+		if(!(obj instanceof Book)) {
+			return false;
+		}
+		Book other = (Book)obj;
+		if(this.isbn==other.isbn) {
+			return true;
+		}
+		return false;
+	}
+}
+
+
+public class Program {
+	public static Scanner sc = new Scanner(System.in);
+	public static int menulist() {
+		int choice;
+		System.out.println("0.EXIT!!!");
+		System.out.println("1. Add a new Book");
+		System.out.println("2. Display all Books in Forward Order");
+		System.out.println("3. Display all Books in Reverse Order");
+		System.out.println("4 Delete a book at given index");
+		System.out.println("Enter choice:- ");
+		choice = sc.nextInt();
+		return choice;
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int choice;
+		while((choice = menulist())!=0) {
+			switch(choice) {
+			case 1:
+				
+			}
+		}
+
+	}
+
+}

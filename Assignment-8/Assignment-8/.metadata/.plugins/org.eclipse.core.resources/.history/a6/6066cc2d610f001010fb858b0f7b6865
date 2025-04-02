@@ -1,0 +1,12 @@
+package com.sunbeam;
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Program2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> list = new ArrayList<>();
+
+	}
+
+}

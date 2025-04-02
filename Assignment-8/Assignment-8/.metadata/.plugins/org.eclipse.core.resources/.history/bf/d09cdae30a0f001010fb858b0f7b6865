@@ -1,0 +1,45 @@
+package com.sunbeam;
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Person{
+	private String name;
+	
+	public Person() {
+		
+	}
+	
+	public Person(String name) {
+		this.name = name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public String toString() {
+		return String.format("%s",this.name);
+	}
+}
+
+class Employee extends Person{
+	private int empid;
+	
+	public Employee() {
+		
+	}
+	
+	public Employee(String name , int empid) {
+		super(name);
+		this.empid = empid;
+	}
+}
+
+
+public class Program {
+
+}

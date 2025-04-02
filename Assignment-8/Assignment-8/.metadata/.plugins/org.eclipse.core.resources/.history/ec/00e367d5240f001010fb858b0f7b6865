@@ -1,0 +1,105 @@
+package com.sunbeam;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Comparator;
+
+class Person{
+	private String name;
+	
+	public Person() {
+		
+	}
+	
+	public Person(String name) {
+		this.name = name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public String toString() {
+		return String.format("%s",this.name);
+	}
+}
+
+class Employee extends Person{
+	private int empid;
+	
+	public Employee() {
+		
+	}
+	
+	public Employee(String name , int empid) {
+		super(name);
+		this.empid = empid;
+	}
+	
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+	
+	public int getEmpid() {
+		return this.empid;
+	}
+	
+	public String toString() {
+		return String.format("%-15s%-20d",super.toString(),this.empid);
+	}
+}
+
+class Student extends Person{
+	private int rollno;
+	
+	public Student() {
+		
+	}
+	
+	public Student(String name , int rollno) {
+		super(name);
+		this.rollno = rollno;
+	}
+	
+	public void setRollNo(int rollno) {
+		this.rollno = rollno;
+	}
+	
+	public int getRollNo() {
+		return this.rollno;
+	}
+	
+	public String toString() {
+		return String.format("%-15d%-20s",this.rollno,super.toString());
+	}
+}
+
+class SortByName implements Comparator<Person>{
+	public int compare(Person x , Person y) {
+		int diff = x.getName().compareTo(y.getName());
+		return diff;
+	}
+}
+
+class SortById implements Comparator<Person>{
+	public int compare(Person x , Person y) {
+		if(x instanceof Employee && y instanceof Employee) {
+			Employee p1 = (Employee) x;
+			Employee p2 = (Employee)y;
+			return p1.getEmpid()-p2.getEmpid();
+		}
+		else if(x instanceof Student && y instanceof Student) {
+			Student p1 = (Student)x;
+			Student p2 = (Student)y;
+			return p1.getRollNo()-p2.getRollNo();
+		}
+	}
+}
+
+
+public class Program {
+
+}

@@ -1,0 +1,39 @@
+package package4;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+public class Program {
+	
+	public static void main(String[] args) {
+		List<Integer> list = new ArrayList<Integer>();
+		Collections.addAll(list, 11,22,33,44,55);
+		Iterator<Integer> trav = list.listIterator();
+		
+		while(trav.hasNext()) {
+			Integer ele = trav.next();
+			System.out.println(ele);
+			if(ele==33) {
+				list.add(3, 34);
+			}
+		}
+	}
+
+	public static void main1(String[] args) {
+		// TODO Auto-generated method stub
+		//Fail fast Iterator
+		List<Integer> list = new ArrayList<Integer>();
+		Collections.addAll(list, 11,22,33,44,55);
+		Iterator<Integer> trav = list.iterator();
+		while(trav.hasNext()) {
+			Integer ele = trav.next();
+			System.out.println(ele);
+			if(ele==33) {
+				list.add(3, 22);
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,72 @@
+package package8;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Employee{
+	private int empid;
+	private String name;
+	private double salary;
+	
+	public Employee() {
+		
+	}
+	
+	public Employee(int empid , String name , double salary) {
+		this.empid = empid;
+		this.name = name;
+		this.salary = salary;
+	}
+
+	public int getEmpid() {
+		return empid;
+	}
+
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public String toString() {
+		return String.format("%d  %s   %f",this.empid,this.name,this.salary);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(this==obj) {
+			return true;
+		}
+		if(!(obj instanceof Employee)) {
+			return false;
+		}
+		Employee other = (Employee)obj;
+		if(this.empid == other.empid) {
+			return true;
+		}
+		return false;
+	}
+}
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

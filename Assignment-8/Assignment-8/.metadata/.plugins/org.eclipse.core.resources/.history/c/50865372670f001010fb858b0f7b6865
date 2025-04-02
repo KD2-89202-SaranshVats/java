@@ -1,0 +1,63 @@
+package com.sunbeam;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+public class Program2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> list = new ArrayList<>();
+		list.add("India");
+		list.add("USA");
+		list.add("New York");
+		list.add("Aus");
+		list.add("Paris");
+		list.add("Nepal");
+		list.add("India");
+		list.add("Bhutan");
+		System.out.println("size:- "+list.size());
+		System.out.println("toString():- "+list.toString());
+		
+		list.add(3, "Iran");
+		System.out.println(list.toString());
+		
+		int index = 5;
+		String str = list.get(index);
+		System.out.println(str);
+		
+		str = str.toUpperCase();
+		list.set(index, str);
+		System.out.println(list.toString());
+		
+		list.remove(index);
+		System.out.println(list.toString());
+		
+		String find = "Bhutan";
+		boolean b = list.contains(find);
+		if(b) {
+			System.out.println("Element found!!!!");
+		}
+		else {
+			System.out.println("Element not found!!!!");
+		}
+		
+		int i = list.indexOf(find);
+		System.out.println(i);
+		
+		System.out.println("FWD:- ");
+		ListIterator<String> trav = list.listIterator();
+		while(trav.hasNext()) {
+			String ele = trav.next();
+			System.out.println(ele);
+		}
+		
+		System.out.println("REVERSE:- ");
+		ListIterator<String> trav1 = list.listIterator(list.size());
+		while(trav1.hasPrevious()) {
+			String ele = trav1.previous();
+			System.out.println(ele);
+		}
+	}
+
+}

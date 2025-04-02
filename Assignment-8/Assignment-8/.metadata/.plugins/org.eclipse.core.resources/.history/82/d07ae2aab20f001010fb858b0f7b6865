@@ -1,0 +1,122 @@
+package package8;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+class Employee{
+	private int empid;
+	private String name;
+	private double salary;
+	
+	public Employee() {
+		
+	}
+	
+	public Employee(int empid , String name , double salary) {
+		this.empid = empid;
+		this.name = name;
+		this.salary = salary;
+	}
+
+	public int getEmpid() {
+		return empid;
+	}
+
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public String toString() {
+		return String.format("%d  %s   %f",this.empid,this.name,this.salary);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(this==obj) {
+			return true;
+		}
+		if(!(obj instanceof Employee)) {
+			return false;
+		}
+		Employee other = (Employee)obj;
+		if(this.empid == other.empid) {
+			return true;
+		}
+		return false;
+	}
+}
+
+
+public class Program {
+	public static Scanner sc = new Scanner(System.in);
+	public static List<Employee> list = new ArrayList<Employee>();
+	
+	public static Employee[] getInstances() {
+		Employee[] arr = new Employee[5];
+		arr[0] = new Employee(3, "Ketan", 2000.00);
+		arr[1] = new Employee(2, "Aditya", 3000.00);
+		arr[2] = new Employee(4, "Rohan", 5000.00);
+		arr[3] = new Employee(5, "Sagar", 1000.00);
+		arr[4] = new Employee(1, "Kunal", 4000.00);
+		return arr;
+	}
+	
+	public static void addEmployees(Employee[] employees) {
+		for(Employee e : employees) {
+			list.add(e);
+		}
+	}
+	
+	public static void printEmployee() {
+		for(Employee e : list) {
+			System.out.println(e);
+		}
+	}
+	
+	
+	public static int menulist() {
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		System.out.println("0.EXIT!!!");
+		System.out.println("1.Add Employee!!!");
+		System.out.println("2.Find Employee!!!");
+		System.out.println("3.Remove Employeee!!!!");
+		System.out.println("4. Print Employee!!!!");
+		choice = sc.nextInt();
+		return choice;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int choice;
+		while((choice=menulist())!=0) {
+			switch(choice) {
+			case 1:
+				Employee[] a = Program.getInstances();
+				Program.addEmployees(a);
+				break;
+				
+			case 4:
+				Program.printEmployee();
+				break;
+			}
+		}
+	}
+
+}
