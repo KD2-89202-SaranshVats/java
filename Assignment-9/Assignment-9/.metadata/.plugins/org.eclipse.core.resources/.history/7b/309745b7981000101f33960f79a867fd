@@ -1,0 +1,120 @@
+package package2;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Scanner;
+import java.util.Set;
+
+class Project implements Comparable<Project>{
+	private int id;
+	private String title;
+	private int teamSize;
+	private double projectCost;
+	private String technology;
+	
+	public Project() {
+		
+	}
+	
+	public Project(int id , String title , int teamSize , double projectCost , String technology) {
+		this.id = id;
+		this.title = title;
+		this.teamSize = teamSize;
+		this.projectCost = projectCost;
+		this.technology = technology;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getTeamSize() {
+		return teamSize;
+	}
+
+	public void setTeamSize(int teamSize) {
+		this.teamSize = teamSize;
+	}
+
+	public double getProjectCost() {
+		return projectCost;
+	}
+
+	public void setProjectCost(double projectCost) {
+		this.projectCost = projectCost;
+	}
+
+	public String getTechnology() {
+		return technology;
+	}
+
+	public void setTechnology(String technology) {
+		this.technology = technology;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(this==obj) {
+			return true;
+		}
+		if(!(obj instanceof Project)) {
+			return false;
+		}
+		Project other = (Project)obj;
+		if(this.id == other.id) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public int compareTo(Project other) {
+		return this.id-other.id;
+	}
+}
+
+
+
+public class Program {
+	private static Scanner sc = new Scanner(System.in);
+	private static Set<Project> set = new HashSet<Project>();
+	
+	public int menulist() {
+		int choice;
+		System.out.println("0. EXIT!!!!");
+		System.out.println("1. ADD DUMMY DATA");
+		System.out.println("2. INPUT A PROJECT FROM USER AND ADD IT");
+		System.out.println("3. DISPLAY ALL PROJECTS");
+		System.out.println("4. DELETE A PROJECT BY ID FROM SET");
+		System.out.println("5 COPY ALL PROJECTS FROM SET TO ARRAYLIST");
+		System.out.println("6. DISPLAY ALL PROJECT FROM LIST");
+		System.out.println("7. SORT ALL PROJECT IN LIST BY COST");
+		System.out.println("8. FIND PROJECT MAX TEAM SIZE");
+		System.out.println("Enter choice:- ");
+		choice = sc.nextInt();
+		return choice;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

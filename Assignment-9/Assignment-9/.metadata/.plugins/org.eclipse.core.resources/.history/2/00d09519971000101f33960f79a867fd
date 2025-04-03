@@ -1,0 +1,87 @@
+package package2;
+import java.util.Scanner;
+
+class Project{
+	private int id;
+	private String title;
+	private int teamSize;
+	private double projectCost;
+	private String technology;
+	
+	public Project() {
+		
+	}
+	
+	public Project(int id , String title , int teamSize , double projectCost , String technology) {
+		this.id = id;
+		this.title = title;
+		this.teamSize = teamSize;
+		this.projectCost = projectCost;
+		this.technology = technology;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getTeamSize() {
+		return teamSize;
+	}
+
+	public void setTeamSize(int teamSize) {
+		this.teamSize = teamSize;
+	}
+
+	public double getProjectCost() {
+		return projectCost;
+	}
+
+	public void setProjectCost(double projectCost) {
+		this.projectCost = projectCost;
+	}
+
+	public String getTechnology() {
+		return technology;
+	}
+
+	public void setTechnology(String technology) {
+		this.technology = technology;
+	}
+	
+	public boolean equals(Object obj) {
+		if(this==obj) {
+			return true;
+		}
+		if(!(obj instanceof Project)) {
+			return false;
+		}
+		Project other = (Project)obj;
+		if(this.id == other.id) {
+			return true;
+		}
+		return false;
+	}
+}
+
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

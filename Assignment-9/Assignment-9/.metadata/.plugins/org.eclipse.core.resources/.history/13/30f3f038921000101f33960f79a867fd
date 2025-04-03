@@ -1,0 +1,140 @@
+package package1;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+class Student implements Comparable<Student>{
+	private int id;
+	private String name;
+	private double marks;
+	
+	public Student() {
+		
+	}
+	
+	public Student(int id , String name , double marks) {
+		this.id = id;
+		this.name = name;
+		this.marks = marks;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getMarks() {
+		return marks;
+	}
+
+	public void setMarks(double marks) {
+		this.marks = marks;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%d   %s   %f",this.id,this.name,this.marks);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(this==obj) {
+			return true;
+		}
+		if(!(obj instanceof Student)) {
+			return false;
+		}
+		Student other = (Student)obj;
+		if(this.id==other.id) {
+			return true;
+		}
+		return false;
+	}
+	
+	public int compareTo(Student other) {
+		return this.id-other.id;
+	}
+	
+}
+
+public class Program {
+	private static Scanner sc = new Scanner(System.in);
+	private static List<Student> list = new ArrayList<Student>();
+	
+	public static Student[] getinstance() {
+		Student[] arr = new Student[5];
+		arr[0] = new Student(1,"Aman",80);
+		arr[1] = new Student(2,"Rahul",90);
+		arr[2] = new Student(3,"Chirag",75);
+		arr[3] = new Student(4,"Pulkit",82);
+		arr[4] = new Student(5,"Honey",65);
+		return arr;
+	}
+	
+	public static void addStudent(Student[] arr) {
+		for(Student s:arr) {
+			list.add(s);
+		}
+	}
+	
+	public static void display() {
+		Iterator<Student>trav=list.iterator();
+		while(trav.hasNext()) {
+			Student s = trav.next();
+			System.out.println(s.toString());
+		}
+	}
+	
+	
+	public static int menulist() {
+		int choice;
+		System.out.println("0. EXIT!!!");
+		System.out.println("1. Add Student");
+		System.out.println("2. Display all Students using Iterator");
+		System.out.println("3. Search the Student on RollNo");
+		System.out.println("4. Sort the Student on RollNo");
+		System.out.println("5. Sort the Student on name");
+		System.out.println("6. Sort the students on marks");
+		System.out.println("Enter choice:- ");
+		choice = sc.nextInt();
+		return choice;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int choice;
+		
+		while((choice = menulist())!=0) {
+			switch(choice) {
+			case 1:
+				//1list.clear();
+				Student[] arr=Program.getinstance();
+				Program.addStudent(arr);
+				break;
+			case 2:
+				display();
+				break;
+			case 3:
+				
+			default:
+				System.out.println("hello");
+				break;
+			}
+		}
+
+	}
+
+}
